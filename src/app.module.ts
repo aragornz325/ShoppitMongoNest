@@ -7,6 +7,8 @@ import * as Joi from 'joi';
 import { DatabaseModule } from './database/database.module';
 import { environments } from './enviroments';
 import { UsersModule } from './users/users.module';
+import { ProductsModule } from './products/products.module';
+import { CategoriesModule } from './categories/categories.module';
 import config from './config';
 
 @Module({
@@ -23,6 +25,8 @@ import config from './config';
       }),
     }),
     UsersModule,
+    ProductsModule,
+    CategoriesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
