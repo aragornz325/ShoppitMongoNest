@@ -48,7 +48,7 @@ export class CategoriesService {
       .findByIdAndDelete(id)
       .exec();
     if (!deletedCategory) {
-      return { msg: 'Category not found' };
+      return { msg: 'Category not found in DB' };
     }
     return deletedCategory;
   }
