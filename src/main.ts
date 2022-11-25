@@ -13,8 +13,13 @@ async function bootstrap() {
       },
     }),
   );
-  app.enableCors();
-  const port = 3000;
+  app.enableCors({
+    origin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+  });
+  const port = process.env.PORT || 3000;
   await app.listen(port);
 }
 bootstrap();
